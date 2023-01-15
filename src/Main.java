@@ -29,7 +29,7 @@ public class Main {
 
     public static void task3() {
         System.out.println("Задача 3");
-        for (int i = 0 + 2; i <= 17; i = i + 2) {
+        for (int i = 2; i <= 17; i = i + 2) {
             System.out.println(i);
         }
     }
@@ -85,9 +85,9 @@ public class Main {
     }
     public static void task10() {
         System.out.println("Задача 10");
-        int a=2;
+        int factor=2;
         for (int i = 1; i <= 10; i++) {
-            System.out.printf("%d*%d=%d%n",a,i,a*i);
+            System.out.printf("%d*%d=%d%n",factor,i,factor*i);
         }
     }
 }
