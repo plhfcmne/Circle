@@ -7,107 +7,62 @@ public class Main {
         task3();
         task4();
     }
+    public static int[] generateRandomArray() {
+        java.util.Random random = new java.util.Random(7);
+        int[] arr = new int[30];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = random.nextInt(100_000) + 100_000;
+        }
+        return arr;
+    }
+
 
     public static void task1() {
         System.out.println("Задача 1");
-        int[] massive =new int[3]; // 1-й способ
-        massive[0] = 1;
-        massive[1] = 2;
-        massive[2] = 3;
-        for (int i = 0; i < 3; i++) {
-            System.out.println(massive[i]);
+        int[] array = generateRandomArray();
+        //System.out.println(Arrays.toString(expenses));
+        int sum=0;
+        for (int cost:array) {
+            sum=sum+cost;
         }
-        double[] massive2 ={1.57, 7.654, 9.986}; // 2-й способ
-        for (int i = 0; i < 3; i++) {
-            System.out.println(massive2[i]);
-        }
-        int [] massive3 =new int[9]; // 3-й способ
-        for (int i = 0; i < massive3.length; i++) {
-            massive3[i]=i*2;
-            System.out.println(massive3[i]);
-        }
+        System.out.printf("Сумма трат за месяц составила %d рублей %n", sum);
     }
 
     public static void task2() {
         System.out.println("Задача 2");
-        int[] massive = new int[3]; // 1-й способ
-        massive[0] = 1;
-        massive[1] = 2;
-        massive[2] = 3;
-        for (int i = 0; i < 3; i++) {
-            System.out.print(massive[i]);
-            if (i != massive.length - 1) {
-                System.out.print(", ");
+        int[] expenses = generateRandomArray();
+        //System.out.println(Arrays.toString(expenses));
+        int max=expenses[0];
+        int min=expenses[0];
+        for (int cost:expenses) {
+            if (max < cost) {
+                max=cost;
             }
-        }
-        System.out.println();
-        double[] massive2 = {1.57, 7.654, 9.986}; // 2-й способ
-        for (int i = 0; i < massive2.length; i++) {
-            System.out.print(massive2[i]);
-            if (i != massive2.length - 1) {
-                System.out.print(", ");
+            if (min > cost) {
+                min=cost;
             }
-        }
-        System.out.println();
-        int[] massive3 = new int[9]; // 3-й способ
-        for (int i = 0; i < massive3.length; i++) {
-            massive3[i] = i * 2;
-            System.out.print(massive3[i]);
-            if (i != massive3.length - 1) {
-                System.out.print(", ");
             }
+        System.out.println("Минимальная сумма трат за день составила "+min+" рублей. Максимальная сумма трат за день составила "+max+" рублей");
         }
-            System.out.println();
-    }
 
     public static void task3() {
         System.out.println("Задача 3");
-        int[] massive = new int[3]; // 1-й способ
-        massive[0] = 1;
-        massive[1] = 2;
-        massive[2] = 3;
-        for (int i = massive.length-1; i >=0; i--) {
-            System.out.print(massive[i]);
-            if (i !=0) {
-                System.out.print(", ");
-            }
+        int[] expenses = generateRandomArray();
+        //System.out.println(Arrays.toString(expenses));
+        int sum=0;
+        for (int cost:expenses) {
+            sum=sum+cost;
         }
-        System.out.println();
-        double[] massive2 = {1.57, 7.654, 9.986}; // 2-й способ
-        for (int i = massive2.length-1; i >=0; i--) {
-            System.out.print(massive2[i]);
-            if (i != 0) {
-                System.out.print(", ");
-            }
-        }
-        System.out.println();
-        int[] massive3 = new int[9]; // 3-й способ
-        for (int i = massive3.length-1; i>=0; i--) {
-            massive3[i] = i * 2;
-            System.out.print(massive3[i]);
-            if (i !=0) {
-                System.out.print(", ");
-            }
-        }
-        System.out.println();
+        System.out.printf("Средняя сумма трат за месяц составила %.2f рублей %n", (double)sum/expenses.length);
+
     }
 
     public static void task4() {
         System.out.println("Задача 4");
-        int[] massive = new int[3]; // 1-й способ
-        massive[0] = 1;
-        massive[1] = 2;
-        massive[2] = 3;
-        System.out.println(Arrays.toString(massive));
-        for (int i = 0; i < massive.length; i++) {
-            if (massive[i] % 2 == 1) {
-                massive[i]++;
-            }
-            System.out.print(massive[i]);
-            if (i != massive.length - 1) {
-                System.out.print(", ");
-            }
+        char[] reverseFullName = { 'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
+        for (int i = reverseFullName.length-1; i>=0; i--) {
+            System.out.print(reverseFullName[i]);
         }
         System.out.println();
-}
+    }
 }
